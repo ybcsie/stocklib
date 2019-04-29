@@ -28,6 +28,8 @@ def read_stock_data_cptr_list(sid_path, trade_day_size):
                 stock_data_cptr_list.append(stock.new_stock_data_ptr(int(stock_info[0]),
                                                                      tools.date2int(stock_info[1]),
                                                                      trade_day_size))
+            else:
+                print("limit_datetime < ipo_datetime: {}".format(stock_info[0]))
         else:
             print("Error: stock list -- {}".format(sid))
 
@@ -75,7 +77,7 @@ def read_trade_day_list(smd_path, stock_data_cptr, months):
 def read_trade_data_in_list(trade_data_dir, stock_data_cptr_list, months):
     for stock_data_cptr in stock_data_cptr_list:
         stock_id = stock.get_stock_id(stock_data_cptr)
-        print("read trade data {}".format(stock_id))
+        # print("read trade data {}".format(stock_id))
         read_trade_day_list("{}/{}.smd".format(trade_data_dir, stock_id), stock_data_cptr, months)
 
 

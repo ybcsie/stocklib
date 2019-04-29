@@ -1,0 +1,12 @@
+*.o
+
+*__pycache__
+
+.idea
+
+*.vscode
+
+c_api/*.dll
+c_api/*.so
+c_api/src/swig_gen
+c_api/stock.py

@@ -114,7 +114,7 @@ def read_all_dtd(dtd_dir, stock_data_cptr_list):
         if not dtd_filename.endswith(".dtd"):
             continue
 
-        print("read dtd {}".format(dtd_filename))
+        # print("read dtd {}".format(dtd_filename))
         read_dtd("{}/{}".format(dtd_dir, dtd_filename), stock_data_cptr_list)
 
 
@@ -141,5 +141,5 @@ def read_sfd(sfd_path, stock_data_cptr):
 def read_sfd_in_list(sfd_dir, stock_data_cptr_list):
     for stock_data_cptr in stock_data_cptr_list:
         stock_id = stock.get_stock_id(stock_data_cptr)
-        print("read sfd {}".format(stock_id))
+        # print("read sfd {}".format(stock_id))
         read_sfd("{}/{}.sfd".format(sfd_dir, stock_id), stock_data_cptr)
